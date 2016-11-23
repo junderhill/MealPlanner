@@ -57,6 +57,7 @@
     <Compile Include="MealPlanTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecipeTests.cs" />
+    <Compile Include="StubCookBook.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

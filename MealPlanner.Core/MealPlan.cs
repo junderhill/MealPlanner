@@ -1,22 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MealPlanner.Core
 {
 	public class MealPlan
 	{
-		private List<Meal> _meals;
+	    public int NumberOfMealsToPlan { get; private set; }
+	    private readonly ICookBook _cookBook;
+	    private List<Meal> _meals;
+	    private List<Recipe> _availableRecipes;
 
-		private MealPlan(int mealsToPlan)
+	    private Random _random;
+
+	    private MealPlan(ICookBook cookBook, int numberOfMealsToPlan)
 		{
-			for (var i = 0; i < mealsToPlan; i++)
-			{
-				this.Meals.Add(new Meal());
-			}
+            _random = new Random(DateTime.Now.Second);
+		    NumberOfMealsToPlan = numberOfMealsToPlan;
+		    _cookBook = cookBook;
+
+		    _availableRecipes = _cookBook.GetAllRecipes();
+
+		    PlanMeals();
 		}
 
-		public static MealPlan Create(int mealsToPlan = 5)
+	    private void PlanMeals()
+	    {
+	        for (int i = 0; i < NumberOfMealsToPlan; i++)
+	        {
+	            int randomRecipeNumber = _random.Next(_availableRecipes.Count);
+	            var recipe = _availableRecipes[randomRecipeNumber];
+                Meals.Add(new Meal() {Recipe = recipe});
+	        }
+	    }
+
+	    public static MealPlan Create(ICookBook cookbook, int mealsToPlan = 5)
 		{
-			return new MealPlan(mealsToPlan);
+			return new MealPlan(cookbook,mealsToPlan);
 		}
 
 		public List<Meal> Meals
@@ -28,5 +47,6 @@ namespace MealPlanner.Core
 
 	public class Meal
 	{
+	    public Recipe Recipe { get; set; }
 	}
 }

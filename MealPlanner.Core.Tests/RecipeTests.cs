@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MealPlanner.Core;
 using Xunit;
 using Should;
 using MealPlanner.Core;

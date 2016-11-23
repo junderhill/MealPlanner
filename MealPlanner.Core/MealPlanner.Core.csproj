@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICookBook.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="MealPlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
