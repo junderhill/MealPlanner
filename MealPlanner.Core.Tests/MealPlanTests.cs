@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using MoreLinq;
 using Should;
 using Xunit;
 
@@ -48,7 +49,7 @@ namespace MealPlanner.Core.Tests
 			//First assertion is to check that we have enough stub data to allow the test to succeed.
 			cookbook.GetAllRecipes().Count.ShouldBeGreaterThanOrEqualTo(mealsToPlan);
 
-			plan.Meals.Distinct().Count().ShouldEqual(plan.Meals.Count);
+			plan.Meals.DistinctBy(x => x.Recipe.Name).Count().ShouldEqual(plan.Meals.Count);
 		}
 
 	}
