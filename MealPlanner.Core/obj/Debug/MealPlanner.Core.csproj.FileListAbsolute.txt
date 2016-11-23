@@ -1,5 +1,0 @@
-C:\Users\JasonU\RiderProjects\MealPlanner\MealPlanner.Core\bin\Debug\MealPlanner.Core.dll
-C:\Users\JasonU\RiderProjects\MealPlanner\MealPlanner.Core\bin\Debug\MealPlanner.Core.pdb
-C:\Users\JasonU\RiderProjects\MealPlanner\MealPlanner.Core\obj\Debug\MealPlanner.Core.csprojResolveAssemblyReference.cache
-C:\Users\JasonU\RiderProjects\MealPlanner\MealPlanner.Core\obj\Debug\MealPlanner.Core.dll
-C:\Users\JasonU\RiderProjects\MealPlanner\MealPlanner.Core\obj\Debug\MealPlanner.Core.pdb
