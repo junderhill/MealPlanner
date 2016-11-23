@@ -32,9 +32,23 @@ namespace MealPlanner.Core.Tests
 		{
 			var cookbook = new StubCookBook();
 
-		    var plan = MealPlan.Create(cookbook);
-            
-            cookbook.GetAllRecipes().ShouldContain(plan.Meals.First().Recipe);
+			var plan = MealPlan.Create(new StubCookBook());
+
+		    cookbook.GetAllRecipes().Any(x => x.Name == plan.Meals.First().Recipe.Name).ShouldBeTrue();
+		}
+
+		[Fact]
+		public void CreateMealPlan_WherePossible_MealsArentDuplicatedInAPlan()
+		{
+			const int mealsToPlan = 3;
+
+			var cookbook = new StubCookBook();
+			var plan = MealPlan.Create(cookbook, mealsToPlan);
+
+			//First assertion is to check that we have enough stub data to allow the test to succeed.
+			cookbook.GetAllRecipes().Count.ShouldBeGreaterThanOrEqualTo(mealsToPlan);
+
+			plan.Meals.Distinct().Count().ShouldEqual(plan.Meals.Count);
 		}
 
 	}

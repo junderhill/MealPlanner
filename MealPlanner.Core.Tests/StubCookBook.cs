@@ -26,6 +26,48 @@ namespace MealPlanner.Core.Tests
                             Name = "Eggs"
                         }
                     }
+                },
+                new Recipe()
+                {
+                    Name = "Bolognese",
+                    Ingredients = new List<Ingredient>
+                    {
+                        new Ingredient()
+                        {
+                            Name = "Beef"
+                        },
+                        new Ingredient()
+                        {
+                            Name = "Tinned Tomato"
+                        },
+                        new Ingredient()
+                        {
+                            Name = "Stock"
+                        }
+                    }
+                },
+                new Recipe()
+                {
+                    Name = "Diet Coke Chicken",
+                    Ingredients = new List<Ingredient>
+                    {
+                        new Ingredient()
+                        {
+                            Name = "Chicken"
+                        },
+                        new Ingredient()
+                        {
+                            Name = "Tinned Tomato"
+                        },
+                        new Ingredient()
+                        {
+                            Name = "Peppers"
+                        },
+                        new Ingredient()
+                        {
+                            Name = "Diet Coke"
+                        }
+                    }
                 }
             };
         }
